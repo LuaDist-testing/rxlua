@@ -1,15 +1,15 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "rxlua"
-version = "0.0.1-1"
+version = "0.0.2-1"
 
 -- LuaDist source
 source = {
-  tag = "0.0.1-1",
+  tag = "0.0.2-1",
   url = "git://github.com/LuaDist-testing/rxlua.git"
 }
 -- Original source
--- source = { url = "git://github.com/bjornbytes/RxLua.git", tag = "v0.0.1" }
+-- source = { url = "git://github.com/bjornbytes/RxLua.git", tag = "v0.0.2" }
 -- 
 -- description =
 -- {

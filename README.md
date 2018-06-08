@@ -25,6 +25,11 @@ Documentation
 
 See [here](doc).
 
+Contributing
+---
+
+See [here](doc/CONTRIBUTING.md).
+
 Tests
 ---
 
@@ -43,6 +48,7 @@ lua tests/runner.lua skipUntil
 Related
 ---
 
+- [Trello](https://trello.com/b/Q9dJicKK)
 - [RxLove](https://github.com/bjornbytes/RxLove)
 
 License

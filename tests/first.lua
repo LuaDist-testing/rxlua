@@ -6,8 +6,8 @@ describe('first', function()
   end)
 
   it('produces no elements if its parent produces no elements', function()
-    local observable = Rx.Observable.create(function(observer) return observer:onComplete() end):first()
-    expect(observable).to.produce({})
+    local observable = Rx.Observable.create(function(observer) return observer:onCompleted() end):first()
+    expect(observable).to.produce.nothing()
   end)
 
   it('produces the first element of its parent and immediately completes', function()

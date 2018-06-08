@@ -9,9 +9,9 @@ observableSpy = function(observable)
   local observer = Rx.Observer.create(_, function() end, _)
   local onNext = spy(observer, '_onNext')
   local onError = spy(observer, '_onError')
-  local onComplete = spy(observer, '_onComplete')
+  local onCompleted = spy(observer, '_onCompleted')
   observable:subscribe(observer)
-  return onNext, onError, onComplete
+  return onNext, onError, onCompleted
 end
 
 lust.paths['produce'] = {
@@ -28,22 +28,22 @@ lust.paths['produce'] = {
       values = args[1]
     end
 
-    local onNext, onError, onComplete = observableSpy(observable)
+    local onNext, onError, onCompleted = observableSpy(observable)
     expect(observable).to.be.an(Rx.Observable)
     expect(onNext).to.equal(values)
     expect(#onError).to.equal(0)
-    expect(#onComplete).to.equal(1)
+    expect(#onCompleted).to.equal(1)
     return true
   end
 }
 
 lust.paths['nothing'] = {
   f = function(observable)
-    local onNext, onError, onComplete = observableSpy(observable)
+    local onNext, onError, onCompleted = observableSpy(observable)
     expect(observable).to.be.an(Rx.Observable)
     expect(#onNext).to.equal(0)
     expect(#onError).to.equal(0)
-    expect(#onComplete).to.equal(1)
+    expect(#onCompleted).to.equal(1)
     return true
   end
 }
@@ -56,7 +56,12 @@ if arg[1] then
 else
   local files = {
     'observer',
-    'observable'
+    'observable',
+    'subscription',
+    'subject',
+    'asyncsubject',
+    'behaviorsubject',
+    'replaysubject'
   }
 
   for i, file in ipairs(files) do
